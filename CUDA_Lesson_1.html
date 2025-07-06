@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>CUDA_Lesson_1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>CUDA_Lesson_1-1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7542,15 +7542,38 @@ a.anchor-link {
       }
     });
   </script>
+
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<main>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="CUDA---Lesson-1">CUDA - Lesson 1<a class="anchor-link" href="#CUDA---Lesson-1">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>&lt;補充&gt; 查看 colab nvcc 位置</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">which</span> <span class="n">nvcc</span>
@@ -7579,7 +7602,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="%3C%E5%AF%A6%E4%BE%8B%3E-%E5%A6%82%E4%BD%95%E5%9C%A8-colab-%E4%B8%8A%E5%9F%B7%E8%A1%8C-CUDA">&lt;實例&gt; 如何在 colab 上執行 CUDA<a class="anchor-link" href="#%3C%E5%AF%A6%E4%BE%8B%3E-%E5%A6%82%E4%BD%95%E5%9C%A8-colab-%E4%B8%8A%E5%9F%B7%E8%A1%8C-CUDA">¶</a></h2><h4 id="1.-%E5%88%87%E6%8F%9B-%5B%E5%9F%B7%E8%A1%8C%E9%9A%8E%E6%AE%B5%5D--%3E-%5B%E8%AE%8A%E6%9B%B4%E5%9F%B7%E8%A1%8C%E9%9A%8E%E6%AE%B5%E9%A1%9E%E5%9E%8B%5D--%3E-%5BPython3-/-T4-GPU%5D">1. 切換 [執行階段] -&gt; [變更執行階段類型] -&gt; [Python3 / T4 GPU]<a class="anchor-link" href="#1.-%E5%88%87%E6%8F%9B-%5B%E5%9F%B7%E8%A1%8C%E9%9A%8E%E6%AE%B5%5D--%3E-%5B%E8%AE%8A%E6%9B%B4%E5%9F%B7%E8%A1%8C%E9%9A%8E%E6%AE%B5%E9%A1%9E%E5%9E%8B%5D--%3E-%5BPython3-/-T4-GPU%5D">¶</a></h4><h4 id="2.-%E6%9F%A5%E7%9C%8B-GPU-%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8-&amp;-GPU-%E8%A6%8F%E6%A0%BC">2. 查看 GPU 是否存在 &amp; GPU 規格<a class="anchor-link" href="#2.-%E6%9F%A5%E7%9C%8B-GPU-%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8-&amp;-GPU-%E8%A6%8F%E6%A0%BC">¶</a></h4>
+<h2 id="%3C%E5%AF%A6%E4%BE%8B1%3E-%E5%A6%82%E4%BD%95%E5%9C%A8-colab-%E4%B8%8A%E5%9F%B7%E8%A1%8C-CUDA">&lt;實例1&gt; 如何在 colab 上執行 CUDA<a class="anchor-link" href="#%3C%E5%AF%A6%E4%BE%8B1%3E-%E5%A6%82%E4%BD%95%E5%9C%A8-colab-%E4%B8%8A%E5%9F%B7%E8%A1%8C-CUDA">¶</a></h2><h4 id="1.-%E5%88%87%E6%8F%9B-%5B%E5%9F%B7%E8%A1%8C%E9%9A%8E%E6%AE%B5%5D--%3E-%5B%E8%AE%8A%E6%9B%B4%E5%9F%B7%E8%A1%8C%E9%9A%8E%E6%AE%B5%E9%A1%9E%E5%9E%8B%5D--%3E-%5BPython3-/-T4-GPU%5D">1. 切換 [執行階段] -&gt; [變更執行階段類型] -&gt; [Python3 / T4 GPU]<a class="anchor-link" href="#1.-%E5%88%87%E6%8F%9B-%5B%E5%9F%B7%E8%A1%8C%E9%9A%8E%E6%AE%B5%5D--%3E-%5B%E8%AE%8A%E6%9B%B4%E5%9F%B7%E8%A1%8C%E9%9A%8E%E6%AE%B5%E9%A1%9E%E5%9E%8B%5D--%3E-%5BPython3-/-T4-GPU%5D">¶</a></h4><h4 id="2.-%E6%9F%A5%E7%9C%8B-GPU-%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8-&amp;-GPU-%E8%A6%8F%E6%A0%BC">2. 查看 GPU 是否存在 &amp; GPU 規格<a class="anchor-link" href="#2.-%E6%9F%A5%E7%9C%8B-GPU-%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8-&amp;-GPU-%E8%A6%8F%E6%A0%BC">¶</a></h4>
 </div>
 </div>
 </div>
@@ -7588,7 +7611,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">nvcc</span> <span class="o">--</span><span class="n">version</span>
@@ -7619,7 +7642,7 @@ Build cuda_12.5.r12.5/compiler.34385749_0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
@@ -7687,7 +7710,7 @@ Build cuda_12.5.r12.5/compiler.34385749_0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre class="can-copy"><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cuda_test1</span><span class="o">-</span><span class="mf">1.</span><span class="n">cu</span>
@@ -7743,7 +7766,7 @@ Build cuda_12.5.r12.5/compiler.34385749_0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">nvcc</span> <span class="n">cuda_test1</span><span class="o">-</span><span class="mf">1.</span><span class="n">cu</span> <span class="o">-</span><span class="n">o</span> <span class="n">cuda_test1</span><span class="o">-</span><span class="mi">1</span>
@@ -7768,7 +7791,7 @@ Build cuda_12.5.r12.5/compiler.34385749_0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">nvcc</span> <span class="o">-</span><span class="n">arch</span><span class="o">=</span><span class="n">sm_75</span> <span class="n">cuda_test1</span><span class="o">-</span><span class="mf">1.</span><span class="n">cu</span> <span class="o">-</span><span class="n">o</span> <span class="n">cuda_test1</span><span class="o">-</span><span class="mi">1</span>
@@ -7793,7 +7816,7 @@ Build cuda_12.5.r12.5/compiler.34385749_0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="o">./</span><span class="n">cuda_test1</span><span class="o">-</span><span class="mi">1</span>
@@ -7858,7 +7881,7 @@ Max thread-warps per SM: 32
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cuda_test1</span><span class="o">-</span><span class="mf">2.</span><span class="n">cu</span>
@@ -7887,7 +7910,7 @@ Max thread-warps per SM: 32
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Overwriting cuda_test1.cu
+<pre>Overwriting cuda_test1-2.cu
 </pre>
 </div>
 </div>
@@ -7909,10 +7932,10 @@ Max thread-warps per SM: 32
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">nvcc</span> <span class="o">-</span><span class="n">arch</span><span class="o">=</span><span class="n">sm_75</span> <span class="n">cuda_test1</span><span class="o">.</span><span class="n">cu</span> <span class="o">-</span><span class="n">o</span> <span class="n">cuda_test1</span>
+<div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">nvcc</span> <span class="o">-</span><span class="n">arch</span><span class="o">=</span><span class="n">sm_75</span> <span class="n">cuda_test1</span><span class="o">-</span><span class="mf">2.</span><span class="n">cu</span> <span class="o">-</span><span class="n">o</span> <span class="n">cuda_test1</span><span class="o">-</span><span class="mi">2</span>
 </pre></div>
 </div>
 </div>
@@ -7934,10 +7957,10 @@ Max thread-warps per SM: 32
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="o">./</span><span class="n">cuda_test1</span>
+<div class="highlight hl-python"><pre><span></span><span class="err">!</span><span class="o">./</span><span class="n">cuda_test1</span><span class="o">-</span><span class="mi">2</span>
 </pre></div>
 </div>
 </div>
