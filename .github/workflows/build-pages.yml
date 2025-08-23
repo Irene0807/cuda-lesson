@@ -20,7 +20,7 @@ jobs:
       - run: pip install nbconvert nbformat jupyter
       - run: |
           mkdir -p docs
-          jupyter nbconvert --to html notebooks/CUDA_Lab4.ipynb --output docs/index.html
+          jupyter nbconvert --to html CUDA_Lab4.ipynb --output docs/index.html
       - name: Commit HTML into docs/
         run: |
           git config user.name "github-actions[bot]"
